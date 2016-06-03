@@ -1,0 +1,12 @@
+machine:
+    java:
+        version: openjdk7
+general:
+    artifacts:
+        - "target/greenhouse-1.0.0.BUILD-SNAPSHOT.war"
+test:
+    post:
+        - mvn clean install
+teardown:
+    post:
+        - curl \-\-data "APP_VERSION=${CIRCLE_BUILD_NUM}" https://manageacloud.com/trigger/YOUR_TRIGGER_HASH
