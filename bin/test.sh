@@ -15,4 +15,4 @@ do
   ((i++))
 done
 
-mvn -Dtest=${tests} test
+mvn jacoco:report -Dtest=${tests} test
