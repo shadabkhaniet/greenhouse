@@ -9,8 +9,8 @@ test:
   override:
     - ./bin/test.sh:
         parallel: true
-#    post:
-#        - mvn clean install
+    post:
+        - mvn -Dmaven.test.skip=true clean install
 #    parallel: true
 teardown:
     post:
