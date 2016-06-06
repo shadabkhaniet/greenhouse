@@ -590,6 +590,10 @@
 			<goals>
 				<goal>prepare-agent</goal>
 			</goals>
+<configuration>
+       		              <propertyName>jacoco.agent.argLine</propertyName>
+       		              <destFile>${jaCoCoExecutionDataFile}</destFile>
+			  </configuration>
 		</execution>
 	        <execution>
 	                <id>report</id>
