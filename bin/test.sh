@@ -16,4 +16,4 @@ do
 done
 
 mvn -Dmaven.test.skip=true clean install
-mvn jacoco:report -Dtest=${tests} test
+mvn clean -Dtest=${tests} test
