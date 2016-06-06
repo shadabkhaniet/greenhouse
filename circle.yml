@@ -4,6 +4,7 @@ machine:
 general:
     artifacts:
         - "target/greenhouse-1.0.0.BUILD-SNAPSHOT.war"
+	- "target/site"
 test:
     post:
         - mvn clean install
