@@ -6,9 +6,12 @@ general:
         - "target/greenhouse-1.0.0.BUILD-SNAPSHOT.war"
         - "target/site"
 test:
-    post:
-        - mvn clean install
-    parallel: true
+  override:
+    - ./bin/test.sh:
+        parallel: true
+#    post:
+#        - mvn clean install
+#    parallel: true
 teardown:
     post:
         - curl \-\-data "APP_VERSION=${CIRCLE_BUILD_NUM}" https://manageacloud.com/trigger/YOUR_TRIGGER_HASH
