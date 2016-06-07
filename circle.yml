@@ -15,3 +15,7 @@ test:
 teardown:
     post:
         - curl \-\-data "APP_VERSION=${CIRCLE_BUILD_NUM}" https://manageacloud.com/trigger/YOUR_TRIGGER_HASH
+
+notify:
+  webhooks:
+    - url: https://coveralls.io/webhook?repo_token=Yz4v9mZN4QoEossGA0mgPK0lk0LMdXgfu
