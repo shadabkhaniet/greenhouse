@@ -19,3 +19,10 @@ teardown:
 notify:
   webhooks:
     - url: https://coveralls.io/webhook?repo_token=Yz4v9mZN4QoEossGA0mgPK0lk0LMdXgfu
+
+deployment:
+  dockerhub:
+    branch: master
+    commands:
+      - $DOCKER_HUB_TRIGGER
+
