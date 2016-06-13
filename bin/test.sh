@@ -24,15 +24,17 @@ done
 
 mvn -Dmaven.test.skip=true clean install
 #mvn clean -Dtest=${tests} test
-mvn -Dtest=${tests} test jacoco:report coveralls:report
+#mvn -Dtest=${tests} test jacoco:report coveralls:report
 
 if [ ${NODE_TOTAL} -eq ${NODE_INDEX} ]
 then
  mvn site
+else
+mvn -Dtest=${tests} test jacoco:report coveralls:report
 fi
 
 if [ ${NODE_TOTAL} -eq 1 ]
 then
-mvn site
+mvn -Dtest=${tests} test jacoco:report coveralls:report site
 fi
  
