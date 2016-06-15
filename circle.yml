@@ -10,10 +10,10 @@ test:
 #  override:
 #    - ./bin/test.sh:
 #        parallel: true
-  override:
+#  override:
 #    - mvn clean install:
-    - mvn integration-test: 
-    parallel: true
+#    - mvn integration-test: 
+#    parallel: true
 
      post:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
