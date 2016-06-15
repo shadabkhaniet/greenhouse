@@ -11,8 +11,9 @@ test:
 #    - ./bin/test.sh:
 #        parallel: true
   override:
-    - mvn clean install:
-     parallel: true
+#    - mvn clean install:
+    mvn integration-test: 
+    parallel: true
   post:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
     - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
