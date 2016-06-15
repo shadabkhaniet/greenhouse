@@ -7,9 +7,9 @@ general:
         - "target/site"
         - "target/surefire-reports"
 test:
-  override:
-    - ./bin/test.sh:
-        parallel: true
+#  override:
+#    - ./bin/test.sh:
+#        parallel: true
   post:
     - mvn clean install
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
