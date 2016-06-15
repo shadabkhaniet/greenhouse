@@ -7,7 +7,10 @@ general:
         - "target/site"
         - "target/surefire-reports"
 test:
-     post:
+    override:
+        - mvn integration-test:
+          parallel: true
+    post:
         - mkdir -p $CIRCLE_TEST_REPORTS/junit
         - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
 
