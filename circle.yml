@@ -7,24 +7,13 @@ general:
         - "target/site"
         - "target/surefire-reports"
 
-#dependencies:
-#override:
-#- mvn --fail-never dependency:go-offline || true
-
 test:
-#    override:
-#        - mvn integration-test:
-#
   override:
     - ./bin/test.sh:
         parallel: true
- #         parallel: true
- post:
+  post:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
     - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
- #   post:
- #       - mkdir -p $CIRCLE_TEST_REPORTS/junit
- #       - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
 
 teardown:
     post:
