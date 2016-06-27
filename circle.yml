@@ -8,10 +8,10 @@ general:
         - "target/surefire-reports"
 
 dependencies:
-cache_directories:
-- "~/.m2"
- override:
-  - mvn --fail-never dependency:go-offline || true
+    cache_directories:
+        - "~/.m2"
+    override:
+        - mvn --fail-never dependency:go-offline || true
 
 test:
   override:
