@@ -22,19 +22,19 @@ do
   ((i++))
 done
 
-mvn -Dmaven.test.skip=true clean install
+mvn -o -Dmaven.test.skip=true clean install
 #mvn clean -Dtest=${tests} test
 #mvn -Dtest=${tests} test jacoco:report coveralls:report
 
 if [ ${NODE_TOTAL} -eq ${NODE_INDEX} ]
 then
- mvn site
+ mvn -o site
 else
-mvn -Dtest=${tests} test jacoco:report coveralls:report
+mvn -o -Dtest=${tests} test jacoco:report coveralls:report
 fi
 
 if [ ${NODE_TOTAL} -eq 1 ]
 then
-mvn -Dtest=${tests} test jacoco:report coveralls:report site
+mvn -o -Dtest=${tests} test jacoco:report coveralls:report site
 fi
  
