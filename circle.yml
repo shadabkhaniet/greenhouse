@@ -7,6 +7,10 @@ general:
         - "target/site"
         - "target/surefire-reports"
 
+dependencies:
+ override:
+  - mvn --fail-never dependency:go-offline || true
+
 test:
   override:
     - ./bin/test.sh:
