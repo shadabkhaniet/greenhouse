@@ -30,11 +30,11 @@ if [ ${NODE_TOTAL} -eq ${NODE_INDEX} ]
 then
  mvn -o site
 else
-mvn -o -Dtest=${tests} test jacoco:report coveralls:report
+mvn  -Dtest=${tests} test jacoco:report coveralls:report
 fi
 
 if [ ${NODE_TOTAL} -eq 1 ]
 then
-mvn -o -Dtest=${tests} test jacoco:report coveralls:report site
+mvn  -Dtest=${tests} test jacoco:report coveralls:report site
 fi
  
