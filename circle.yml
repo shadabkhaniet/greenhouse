@@ -5,13 +5,6 @@ general:
     artifacts:
         - "target/greenhouse-1.0.0.BUILD-SNAPSHOT.war"
         - "target/site"
-        - "target/surefire-reports"
-
-dependencies:
-    cache_directories:
-        - "~/.m2"
-    override:
-        - mvn --fail-never dependency:go-offline || true
 
 test:
   override:
